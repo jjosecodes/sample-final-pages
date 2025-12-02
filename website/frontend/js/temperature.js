@@ -12,7 +12,7 @@ const lonInput = document.getElementById('longitude');
 const loadingEl = document.getElementById('loading');
 const errorEl = document.getElementById('error');
 
-// Quick location buttons - use demo data
+// Quick location buttons
 const quickButtons = document.querySelectorAll('.btn-quick');
 quickButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -20,8 +20,6 @@ quickButtons.forEach(btn => {
         const lon = btn.dataset.lon;
         latInput.value = lat;
         lonInput.value = lon;
-
-        // Use demo data for quick locations
         loadDemoData(lat, lon);
     });
 });
