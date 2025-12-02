@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humidity Tracker - Weather Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>💧 Humidity Tracker</h1>
+            <p>Real-time humidity and dewpoint data</p>
+        </div>
+    </header>
+
+    <nav class="page-nav">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="temperature.html">Temperature</a>
+            <a href="wind.html">Wind</a>
+            <a href="humidity.html" class="active">Humidity</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Location Input Section -->
+        <section class="search-section">
+            <h2>Get Humidity Data</h2>
+            <form id="weatherForm">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="latitude">Latitude:</label>
+                        <input
+                            type="number"
+                            id="latitude"
+                            name="latitude"
+                            step="0.0001"
+                            placeholder="e.g., 38.8894"
+                            required
+                        >
+                    </div>
+                    <div class="input-field">
+                        <label for="longitude">Longitude:</label>
+                        <input
+                            type="number"
+                            id="longitude"
+                            name="longitude"
+                            step="0.0001"
+                            placeholder="e.g., -77.0352"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn-primary">Get Humidity</button>
+                </div>
+                <div class="quick-locations">
+                    <p>Quick locations (instant demo data):</p>
+                    <button type="button" class="btn-quick" data-lat="38.8894" data-lon="-77.0352">Washington DC</button>
+                    <button type="button" class="btn-quick" data-lat="40.7128" data-lon="-74.0060">New York</button>
+                    <button type="button" class="btn-quick" data-lat="34.0522" data-lon="-118.2437">Los Angeles</button>
+                    <button type="button" class="btn-quick" data-lat="41.8781" data-lon="-87.6298">Chicago</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching humidity data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message hidden"></div>
+
+        <!-- Current Humidity -->
+        <section id="currentHumidity" class="feature-section hidden">
+            <h2>Current Humidity</h2>
+            <div class="feature-card humidity-card">
+                <div class="feature-main">
+                    <div class="feature-icon">💧</div>
+                    <div class="feature-data">
+                        <div class="humidity-display">
+                            <span id="currentHumidityValue" class="value-large">--</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="humidity-level" id="humidityLevel">--</div>
+                        <div class="feature-location" id="location">--</div>
+                        <div class="feature-time" id="updateTime">--</div>
+                    </div>
+                </div>
+                <div class="feature-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Dewpoint:</span>
+                        <span id="dewpoint" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Condition:</span>
+                        <span id="condition" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Temperature:</span>
+                        <span id="temperature" class="detail-value">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Humidity Forecast -->
+        <section id="humidityForecast" class="feature-section hidden">
+            <h2>7-Day Humidity Forecast</h2>
+            <div id="humidityForecastGrid" class="forecast-grid"></div>
+        </section>
+
+        <!-- Hourly Humidity -->
+        <section id="hourlyHumidity" class="feature-section hidden">
+            <h2>24-Hour Humidity Trend</h2>
+            <div id="hourlyHumidityScroll" class="hourly-scroll"></div>
+        </section>
+
+        <!-- About This Page -->
+        <section class="info-section">
+            <h2>About Humidity Tracking</h2>
+            <p>
+                This page focuses on relative humidity and dewpoint data from the National Weather Service.
+                Understanding humidity levels helps with comfort, health, and activity planning.
+            </p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>💧 Current Humidity</h3>
+                    <p>Real-time relative humidity percentage and comfort levels</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌡️ Dewpoint</h3>
+                    <p>The temperature at which air becomes saturated with moisture</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 Trends</h3>
+                    <p>Hourly and daily humidity predictions</p>
+                </div>
+            </div>
+            <div class="humidity-guide">
+                <h3>Humidity Comfort Guide</h3>
+                <ul>
+                    <li><strong>0-30%:</strong> Dry - May cause dry skin and static</li>
+                    <li><strong>30-50%:</strong> Comfortable - Ideal indoor range</li>
+                    <li><strong>50-70%:</strong> Moderate - Generally comfortable</li>
+                    <li><strong>70-100%:</strong> High - May feel muggy or oppressive</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Weather data provided by the <a href="https://www.weather.gov" target="_blank">National Weather Service</a></p>
+            <p><a href="index.html">← Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script src="js/demo-data.js"></script>
+    <script src="js/humidity.js"></script>
+</body>
+</html>

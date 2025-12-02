@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Tracker - Weather Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>💨 Wind Tracker</h1>
+            <p>Real-time wind speed and direction data</p>
+        </div>
+    </header>
+
+    <nav class="page-nav">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="temperature.html">Temperature</a>
+            <a href="wind.html" class="active">Wind</a>
+            <a href="humidity.html">Humidity</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Location Input Section -->
+        <section class="search-section">
+            <h2>Get Wind Data</h2>
+            <form id="weatherForm">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="latitude">Latitude:</label>
+                        <input
+                            type="number"
+                            id="latitude"
+                            name="latitude"
+                            step="0.0001"
+                            placeholder="e.g., 38.8894"
+                            required
+                        >
+                    </div>
+                    <div class="input-field">
+                        <label for="longitude">Longitude:</label>
+                        <input
+                            type="number"
+                            id="longitude"
+                            name="longitude"
+                            step="0.0001"
+                            placeholder="e.g., -77.0352"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn-primary">Get Wind Data</button>
+                </div>
+                <div class="quick-locations">
+                    <p>Quick locations (instant demo data):</p>
+                    <button type="button" class="btn-quick" data-lat="38.8894" data-lon="-77.0352">Washington DC</button>
+                    <button type="button" class="btn-quick" data-lat="40.7128" data-lon="-74.0060">New York</button>
+                    <button type="button" class="btn-quick" data-lat="34.0522" data-lon="-118.2437">Los Angeles</button>
+                    <button type="button" class="btn-quick" data-lat="41.8781" data-lon="-87.6298">Chicago</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching wind data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message hidden"></div>
+
+        <!-- Current Wind -->
+        <section id="currentWind" class="feature-section hidden">
+            <h2>Current Wind Conditions</h2>
+            <div class="feature-card wind-card">
+                <div class="feature-main">
+                    <div class="feature-icon">💨</div>
+                    <div class="feature-data">
+                        <div class="wind-display">
+                            <span id="currentWindSpeed" class="value-large">--</span>
+                            <span class="unit">mph</span>
+                        </div>
+                        <div class="wind-direction-display">
+                            <div class="compass">
+                                <div id="windArrow" class="wind-arrow">↑</div>
+                            </div>
+                            <span id="windDirection" class="direction-text">--</span>
+                        </div>
+                        <div class="feature-location" id="location">--</div>
+                        <div class="feature-time" id="updateTime">--</div>
+                    </div>
+                </div>
+                <div class="feature-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Wind Gust:</span>
+                        <span id="windGust" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Condition:</span>
+                        <span id="condition" class="detail-value">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wind Forecast -->
+        <section id="windForecast" class="feature-section hidden">
+            <h2>7-Day Wind Forecast</h2>
+            <div id="windForecastGrid" class="forecast-grid"></div>
+        </section>
+
+        <!-- Hourly Wind -->
+        <section id="hourlyWind" class="feature-section hidden">
+            <h2>24-Hour Wind Trend</h2>
+            <div id="hourlyWindScroll" class="hourly-scroll"></div>
+        </section>
+
+        <!-- About This Page -->
+        <section class="info-section">
+            <h2>About Wind Tracking</h2>
+            <p>
+                This page focuses on wind speed and direction data from the National Weather Service.
+                Monitor wind conditions for outdoor activities, travel planning, and safety.
+            </p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>💨 Current Wind</h3>
+                    <p>Real-time wind speed and direction with compass visualization</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 7-Day Forecast</h3>
+                    <p>Wind predictions for the week ahead</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏰ Hourly Trends</h3>
+                    <p>Wind changes throughout the next 24 hours</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Weather data provided by the <a href="https://www.weather.gov" target="_blank">National Weather Service</a></p>
+            <p><a href="index.html">← Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script src="js/demo-data.js"></script>
+    <script src="js/wind.js"></script>
+</body>
+</html>

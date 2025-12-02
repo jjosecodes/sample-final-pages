@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Team Project</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌤️ Weather Dashboard</h1>
+            <p>Real-time weather data from the National Weather Service</p>
+        </div>
+    </header>
+
+    <nav class="page-nav">
+        <div class="container">
+            <a href="index.html" class="active">Home</a>
+            <a href="temperature.html">Temperature</a>
+            <a href="wind.html">Wind</a>
+            <a href="humidity.html">Humidity</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h2>Welcome to the Weather Dashboard</h2>
+            <p class="welcome-text">
+                Explore detailed weather data from the National Weather Service.
+                This dashboard provides comprehensive weather information split into specialized pages for easy access.
+            </p>
+        </section>
+
+        <!-- Weather Pages Grid -->
+        <section class="pages-section">
+            <h2>Weather Data Pages</h2>
+            <div class="pages-grid">
+                <a href="temperature.html" class="page-card">
+                    <div class="page-icon">🌡️</div>
+                    <h3>Temperature</h3>
+                    <p>Track current temperatures, forecasts, and hourly trends</p>
+                    <span class="page-link-arrow">View Details →</span>
+                </a>
+                <a href="wind.html" class="page-card">
+                    <div class="page-icon">💨</div>
+                    <h3>Wind</h3>
+                    <p>Monitor wind speed, direction, and forecast data</p>
+                    <span class="page-link-arrow">View Details →</span>
+                </a>
+                <a href="humidity.html" class="page-card">
+                    <div class="page-icon">💧</div>
+                    <h3>Humidity</h3>
+                    <p>Check humidity levels, dewpoint, and comfort index</p>
+                    <span class="page-link-arrow">View Details →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Quick Weather Overview -->
+        <section id="alertsSection" class="alerts-section">
+            <h2>⚠️ Quick Weather Alerts</h2>
+            <p>Get active weather alerts for any US location:</p>
+            <form id="weatherForm" class="inline-form">
+                <input type="number" id="latitude" step="0.0001" placeholder="Latitude" required>
+                <input type="number" id="longitude" step="0.0001" placeholder="Longitude" required>
+                <button type="submit" class="btn-primary">Check Alerts</button>
+            </form>
+            <div class="quick-locations">
+                <p>Quick locations:</p>
+                <button type="button" class="btn-quick" data-lat="38.8894" data-lon="-77.0352">Washington DC</button>
+                <button type="button" class="btn-quick" data-lat="40.7128" data-lon="-74.0060">New York</button>
+                <button type="button" class="btn-quick" data-lat="34.0522" data-lon="-118.2437">Los Angeles</button>
+            </div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching alerts...</p>
+            </div>
+            <div id="error" class="error-message hidden"></div>
+            <div id="alertsContainer"></div>
+        </section>
+
+        <section class="team-section">
+            <h2>👥 Project Team</h2>
+            <p class="team-intro">This weather dashboard was built by our team of 3 developers. Click on a member to see their individual contribution page.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="member-avatar">J</div>
+                    <h3>Jose</h3>
+                    <p>Temperature Page Developer</p>
+                    <a href="members/member1.html" class="btn-member">View Profile</a>
+                </div>
+                <div class="team-card">
+                    <div class="member-avatar">A</div>
+                    <h3>Anirutha</h3>
+                    <p>Wind Page Developer</p>
+                    <a href="members/member2.html" class="btn-member">View Profile</a>
+                </div>
+                <div class="team-card">
+                    <div class="member-avatar">I</div>
+                    <h3>Isaac</h3>
+                    <p>Humidity Page Developer</p>
+                    <a href="members/member3.html" class="btn-member">View Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Weather data provided by the <a href="https://www.weather.gov" target="_blank">National Weather Service</a></p>
+            <p>Built with ❤️ by our team | <a href="https://api.weather.gov/openapi.json" target="_blank">API Documentation</a></p>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

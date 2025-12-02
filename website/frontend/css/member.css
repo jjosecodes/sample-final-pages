@@ -1,0 +1,249 @@
+/* ===== MEMBER PAGE SPECIFIC STYLES ===== */
+
+.btn-back {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-back:hover {
+    background: white;
+    color: var(--primary-blue);
+}
+
+/* ===== MEMBER PROFILE ===== */
+.member-profile {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: var(--spacing-lg) 0;
+}
+
+.profile-header {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.profile-info .role {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.profile-info .bio {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-portfolio {
+    display: inline-block;
+    background: var(--secondary-orange);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-portfolio:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ===== CONTRIBUTIONS ===== */
+.contribution-section {
+    border-top: 2px solid var(--border-color);
+    padding-top: var(--spacing-md);
+}
+
+.contribution-section h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contribution-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contribution-list li {
+    padding: var(--spacing-sm);
+    background: var(--bg-light);
+    margin-bottom: var(--spacing-xs);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.contribution-list li:before {
+    content: "✓";
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+}
+
+/* ===== PERSONAL WIDGET ===== */
+.personal-widget {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: var(--spacing-lg) 0;
+}
+
+.personal-widget h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.personal-widget p {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.widget-controls {
+    margin-bottom: var(--spacing-md);
+}
+
+.member-weather-display {
+    min-height: 100px;
+}
+
+.member-weather-display .current-card {
+    margin-top: var(--spacing-md);
+}
+
+.member-weather-display .forecast-grid {
+    margin-top: var(--spacing-md);
+}
+
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: var(--spacing-lg) 0;
+}
+
+.skills-section h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.skill-badge {
+    background: var(--bg-light);
+    color: var(--primary-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 2px solid var(--primary-blue);
+    transition: all 0.3s;
+}
+
+.skill-badge:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: var(--spacing-lg) 0;
+}
+
+.contact-section h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-block;
+    background: var(--bg-light);
+    color: var(--primary-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--primary-blue);
+    transition: all 0.3s;
+}
+
+.contact-link:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-link {
+        text-align: center;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member 2 - Weather Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/member.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Member 2 Profile</h1>
+            <a href="../index.html" class="btn-back">← Back to Dashboard</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="member-profile">
+            <div class="profile-header">
+                <div class="profile-avatar">A</div>
+                <div class="profile-info">
+                    <h2>Anirutha</h2>
+                    <p class="role">Wind Page Developer</p>
+                    <p class="bio">Created the wind tracking page with speed, direction visualization, and compass displays.</p>
+                </div>
+            </div>
+
+            <div class="contribution-section">
+                <h3>My Contributions</h3>
+                <ul class="contribution-list">
+                    <li>Developed the Wind page (wind.html)</li>
+                    <li>Implemented wind speed and direction visualization</li>
+                    <li>Created compass display for wind direction</li>
+                    <li>Built hourly wind forecast displays</li>
+                </ul>
+            </div>
+
+            <div class="page-link-section">
+                <h3>My Page</h3>
+                <a href="../wind.html" class="btn-primary">View Wind Page →</a>
+            </div>
+        </section>
+
+        <section class="personal-widget">
+            <h3>My Weather Widget</h3>
+            <p>Get weather for my favorite location:</p>
+            <div class="widget-controls">
+                <button class="btn-primary" onclick="loadMemberWeather(40.7128, -74.0060)">
+                    Show Weather for New York
+                </button>
+            </div>
+            <div id="memberWeather" class="member-weather-display"></div>
+        </section>
+
+        <section class="skills-section">
+            <h3>Skills & Technologies</h3>
+            <div class="skills-grid">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">FastAPI</span>
+                <span class="skill-badge">REST APIs</span>
+                <span class="skill-badge">HTTP/JSON</span>
+                <span class="skill-badge">Backend Development</span>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h3>Connect With Me</h3>
+            <div class="contact-links">
+                <a href="#" class="contact-link">GitHub</a>
+                <a href="#" class="contact-link">LinkedIn</a>
+                <a href="#" class="contact-link">Personal Website</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="../index.html">← Back to Weather Dashboard</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/member.js"></script>
+</body>
+</html>
